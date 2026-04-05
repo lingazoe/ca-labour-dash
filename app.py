@@ -1,6 +1,7 @@
 import streamlit as st
 import plotly.express as px
 from processing import get_data
+from datetime import date
 
 statistics_df = get_data('data/education_true.csv')
 
@@ -54,3 +55,4 @@ st.sidebar.write("Future Updates: Adding metrics")
 
 st.sidebar.markdown("---")
 st.sidebar.caption("Developed by [Zoe Linga](https://github.com/lingazoe/ca-labour-dash)")
+st.sidebar.caption(f"Last Updated: {str(date.today().strftime('%m-%d-%Y'))}")
