@@ -5,7 +5,7 @@ from processing import get_data
 statistics_df = get_data('data/education_true.csv')
 
 st.set_page_config(page_title="Labour Market in Canada (Statistics Canada)", layout="wide")
-st.caption("Source: Statistics Canada. Labour force characteristics by educational attainment, monthly, unadjusted for seasonality.")
+st.caption("Statistics Canada. Table 14-10-0019-01  Labour force characteristics by educational attainment, monthly, unadjusted for seasonality. https://doi.org/10.25318/1410001901-eng")
 
 st.sidebar.header("Filters")
 
@@ -51,3 +51,6 @@ Feel free to play around with the filters and make your own analysis!
 """)
 
 st.sidebar.write("Future Updates: Adding metrics")
+
+st.sidebar.markdown("---")
+st.sidebar.caption("Developed by [Zoe Linga](https://github.com/lingazoe/ca-labour-dash)")
