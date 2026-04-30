@@ -3,7 +3,11 @@ import streamlit as st
 
 def load_data(file):
 
-    return pd.read_csv(file)
+    try:
+        return pd.read_csv(file)
+    except Exception as e:
+        print(f"There was an error loading the file: {e}")
+        return None
 
 def format_dates(stats_df):
 
@@ -11,7 +15,7 @@ def format_dates(stats_df):
 
     return stats_df
 
-def filter_unecessary(stats_df):
+def filter_unnecessary(stats_df):
 
     return stats_df.dropna(subset=['VALUE'])
 
@@ -25,7 +29,7 @@ def get_data(stats_df):
 
     stats_df = load_data(stats_df)
     stats_df = format_dates(stats_df)
-    stats_df = filter_unecessary(stats_df)
+    stats_df = filter_unnecessary(stats_df)
     stats_df = filter_cols(stats_df)
 
     return stats_df
